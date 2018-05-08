@@ -25,7 +25,7 @@ public class DeveloperServiceTest {
                 new Developer("Shlomo", 12000));
         DeveloperService developerService = new DeveloperService();
         Map<Seniority, List<Developer>> map = developerService.groupBySeniority(developers);
-        Assert.assertEquals(0,map.get(JUNIOR).size());
+        Assert.assertFalse(map.containsKey(JUNIOR));
         Assert.assertEquals(1,map.get(MIDDLE).size());
         Assert.assertEquals(3,map.get(SENIOR).size());
 
